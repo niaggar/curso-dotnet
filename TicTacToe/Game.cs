@@ -8,6 +8,9 @@ namespace TicTacToe
 {
     class Game
     {
+
+        private int player = 1;
+        private char playerIcon = 'X';
         private char[,] board = 
         {
             { '0', '1', '2' },
@@ -15,28 +18,104 @@ namespace TicTacToe
             { '6', '7', '8' }
         };
 
-        private int player = 1;
-
-        public Game() { }
 
         public void Start()
         {
-                DrawBoard();
+            var test = '1'.Equals($"{1}");
+            Console.WriteLine(test);
 
-                var cell = Console.ReadKey();
-                Console.WriteLine(cell);
-            /*
             do
             {
-
+                bool inputCorrect;
+                int input;
                 
-            } while (true); */
+                DrawBoard();
+
+                do
+                {
+                    Console.WriteLine("Wich position do you want Player {0}?", this.player);
+                    string inputText = Console.ReadLine();
+                    inputCorrect = int.TryParse(inputText, out input);
+
+                    if (!(input >= 0 && input <= 8) || !inputCorrect)
+                    {
+                        Console.WriteLine("Enter a valid value");
+                        inputCorrect = false;
+                    }
+
+                    if (inputCorrect)
+                    {
+                        bool isSelected = CheckIfIsSelected(input);
+                        inputCorrect = !isSelected;
+
+                        if (isSelected)
+                            Console.WriteLine("The position is already selected, please select another one");
+                    }
+
+                } while (!inputCorrect);
+
+                SelectField(input, playerIcon);
+                ChangePlayer();
+
+            } while (true);
         }
 
-        public void ChangeCellValue(int x, int y, char value)
+        private bool CheckIfIsSelected(int input)
+        { 
+            foreach (char character in this.board)
+            {
+                if (character.Equals(char.Parse($"{input}")))
+                    return false;
+            }
+
+            return true;
+        }
+
+        private void SelectField(int position, char c)
+        {
+            switch (position)
+            {
+                case 0: ChangeCellValue(0, 0, c); 
+                    break;
+                case 1: ChangeCellValue(0, 1, c); 
+                    break;
+                case 3: ChangeCellValue(1, 0, c); 
+                    break;
+                case 4: ChangeCellValue(1, 1, c); 
+                    break;
+                case 5: ChangeCellValue(1, 2, c); 
+                    break;
+                case 6: ChangeCellValue(2, 0, c); 
+                    break;
+                case 2: ChangeCellValue(0, 2, c); 
+                    break;
+                case 7: ChangeCellValue(2, 1, c); 
+                    break;
+                case 8: ChangeCellValue(2, 2, c); 
+                    break;
+                default: Console.WriteLine("Error"); 
+                    break;
+            }
+        }
+
+        private void ChangeCellValue(int x, int y, char value)
         {
             board[x, y] = value;
-        } 
+        }
+
+        private void ChangePlayer()
+        {
+            if (this.player == 1)
+            {
+                this.player = 2;
+                this.playerIcon = 'O';
+            }
+            else
+            {
+                this.player = 1;
+                this.playerIcon = 'X';
+            }
+        }
 
         public void DrawBoard()
         {
@@ -45,6 +124,7 @@ namespace TicTacToe
             var whiteLine = "|  {0}  |  {1}  |  {2}  |";
             var line = "|-----|-----|-----|";
 
+            Console.Clear();
             for (int i = 0; i < this.board.GetLength(0); i++)
             {
                 a = this.board[i, 0];
