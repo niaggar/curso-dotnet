@@ -1,6 +1,7 @@
 ﻿using System;
 using FirstConsoleApp.models;
 using FirstConsoleApp.learnig;
+using System.Collections.Generic;
 
 namespace FirstConsoleApp
 {
@@ -9,6 +10,19 @@ namespace FirstConsoleApp
         static void Main(string[] args)
         {
             CrearListaDePersonas();
+        }
+
+        public static List<int> Solution()
+        {
+            List<int> evenNumbers = new List<int>();
+            int max = 170;
+            for (int i = 100; i <= max; i++)
+            {
+                if (i % 2 == 0)
+                    evenNumbers.Add(i);
+            }
+
+            return evenNumbers;
         }
 
         static void CrearListaDePersonas()

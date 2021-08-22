@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -55,9 +54,66 @@ namespace TicTacToe
                 } while (!inputCorrect);
 
                 SelectField(input, playerIcon);
+                
+                var winer = CheckTheWinner();
+                if (!winer.Equals(' '))
+                {
+                    DrawBoard();
+                    Console.WriteLine("------------------------");
+                    Console.WriteLine("The winer is the player {0}", this.player);
+                    Console.WriteLine("------------------------");
+
+                    Console.WriteLine("Do you want to restar the game? 1: yes, 2: no");
+                    var resStatus = int.TryParse(Console.ReadLine(), out int res);
+                    
+                    if (!resStatus)
+                        break;
+
+                    if (res != 1)
+                        break;
+
+                    RestartGame();
+                }
+
                 ChangePlayer();
 
             } while (true);
+        }
+
+        private void RestartGame()
+        {
+            this.board = new char[,]
+            {
+                { '0', '1', '2' },
+                { '3', '4', '5' },
+                { '6', '7', '8' }
+            };
+
+            this.player = 1;
+            this.playerIcon = 'X';
+        }
+
+        private char CheckTheWinner()
+        {
+            var simbols = new char[] { 'X', 'O' };
+            var winer = ' ';
+
+            foreach (char simbol in simbols)
+            {
+                for (int i = 0; i < this.board.GetLength(0); i++)
+                {
+                    if (this.board[i, 0] == simbol && this.board[i, 1] == simbol && this.board[i, 2] == simbol)
+                        winer = simbol;
+                    else if (this.board[0, i] == simbol && this.board[1, i] == simbol && this.board[2, i] == simbol)
+                        winer = simbol;
+                    else if (this.board[0, 0] == simbol && this.board[1, 1] == simbol && this.board[2, 2] == simbol)
+                        winer = simbol;
+                    else if (this.board[2, 2] == simbol && this.board[1, 1] == simbol && this.board[0, 0] == simbol)
+                        winer = simbol;
+                }
+            }
+
+            return winer;
         }
 
         private bool CheckIfIsSelected(int input)
