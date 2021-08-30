@@ -5,7 +5,13 @@ VisualStudioVersion = 16.0.31605.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirstConsoleApp", "FirstAppConsole\FirstConsoleApp.csproj", "{4C980F27-3A10-4190-AE3A-F73D197BD3F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToe", "TicTacToe\TicTacToe.csproj", "{D645C003-C2F3-4C4B-8ECC-5A29E1628FF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicTacToe", "TicTacToe\TicTacToe.csproj", "{D645C003-C2F3-4C4B-8ECC-5A29E1628FF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldWPF", "HelloWorldWPF\HelloWorldWPF.csproj", "{3E497DFE-9F9E-4C39-A294-D5D7C5AB55FF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EstructuraConGrid", "EstructuraConGrid\EstructuraConGrid.csproj", "{6FD4BE57-4A94-4BBE-AC05-08564B9E6DBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculadoraWPF", "WpfApp1\CalculadoraWPF.csproj", "{0CFC67BB-BB7A-4937-BB32-98D03B5CDA8C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{D645C003-C2F3-4C4B-8ECC-5A29E1628FF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D645C003-C2F3-4C4B-8ECC-5A29E1628FF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D645C003-C2F3-4C4B-8ECC-5A29E1628FF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E497DFE-9F9E-4C39-A294-D5D7C5AB55FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E497DFE-9F9E-4C39-A294-D5D7C5AB55FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E497DFE-9F9E-4C39-A294-D5D7C5AB55FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E497DFE-9F9E-4C39-A294-D5D7C5AB55FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FD4BE57-4A94-4BBE-AC05-08564B9E6DBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FD4BE57-4A94-4BBE-AC05-08564B9E6DBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FD4BE57-4A94-4BBE-AC05-08564B9E6DBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FD4BE57-4A94-4BBE-AC05-08564B9E6DBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CFC67BB-BB7A-4937-BB32-98D03B5CDA8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CFC67BB-BB7A-4937-BB32-98D03B5CDA8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CFC67BB-BB7A-4937-BB32-98D03B5CDA8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CFC67BB-BB7A-4937-BB32-98D03B5CDA8C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

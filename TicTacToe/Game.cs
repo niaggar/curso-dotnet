@@ -100,17 +100,19 @@ namespace TicTacToe
 
             foreach (char simbol in simbols)
             {
-                for (int i = 0; i < this.board.GetLength(0); i++)
-                {
-                    if (this.board[i, 0] == simbol && this.board[i, 1] == simbol && this.board[i, 2] == simbol)
-                        winer = simbol;
-                    else if (this.board[0, i] == simbol && this.board[1, i] == simbol && this.board[2, i] == simbol)
-                        winer = simbol;
-                    else if (this.board[0, 0] == simbol && this.board[1, 1] == simbol && this.board[2, 2] == simbol)
-                        winer = simbol;
-                    else if (this.board[2, 2] == simbol && this.board[1, 1] == simbol && this.board[0, 0] == simbol)
-                        winer = simbol;
-                }
+                if (this.board[0, 0] == simbol && this.board[1, 1] == simbol && this.board[2, 2] == simbol)
+                    winer = simbol;
+                else if (this.board[2, 2] == simbol && this.board[1, 1] == simbol && this.board[0, 0] == simbol)
+                    winer = simbol;
+                
+                else
+                    for (int i = 0; i < this.board.GetLength(0); i++)
+                    {
+                        if (this.board[i, 0] == simbol && this.board[i, 1] == simbol && this.board[i, 2] == simbol)
+                            winer = simbol;
+                        else if (this.board[0, i] == simbol && this.board[1, i] == simbol && this.board[2, i] == simbol)
+                            winer = simbol;
+                    }
             }
 
             return winer;
