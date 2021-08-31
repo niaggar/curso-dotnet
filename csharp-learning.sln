@@ -11,7 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldWPF", "HelloWorld
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EstructuraConGrid", "EstructuraConGrid\EstructuraConGrid.csproj", "{6FD4BE57-4A94-4BBE-AC05-08564B9E6DBF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculadoraWPF", "WpfApp1\CalculadoraWPF.csproj", "{0CFC67BB-BB7A-4937-BB32-98D03B5CDA8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculadoraWPF", "WpfApp1\CalculadoraWPF.csproj", "{0CFC67BB-BB7A-4937-BB32-98D03B5CDA8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrudDeVentas", "CrudDeVentas\CrudDeVentas.csproj", "{5D04F750-4A38-4D64-A121-F28A66B0938F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{0CFC67BB-BB7A-4937-BB32-98D03B5CDA8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CFC67BB-BB7A-4937-BB32-98D03B5CDA8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CFC67BB-BB7A-4937-BB32-98D03B5CDA8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D04F750-4A38-4D64-A121-F28A66B0938F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D04F750-4A38-4D64-A121-F28A66B0938F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D04F750-4A38-4D64-A121-F28A66B0938F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D04F750-4A38-4D64-A121-F28A66B0938F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
