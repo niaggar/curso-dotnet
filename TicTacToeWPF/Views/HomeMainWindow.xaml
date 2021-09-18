@@ -1,0 +1,85 @@
+﻿<UserControl
+    x:Class="TicTacToeWPF.Views.HomeMainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:TicTacToeWPF.Views"
+    xmlns:m="clr-namespace:TicTacToeWPF.Models"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="Window"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+        <TextBlock
+            FontSize="30"
+            FontWeight="Bold"
+            Text="Start a new game" />
+
+        <Grid Margin="0,10,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.ColumnSpan="2" Text="Select the playares taht are going to play." />
+
+            <StackPanel Grid.Row="1" Grid.Column="0">
+                <Label>Player one</Label>
+                <ListBox
+                    Height="100"
+                    HorizontalContentAlignment="Stretch"
+                    ItemsSource="{Binding ElementName=Window, Path=ListPlayers}"
+                    Selector.SelectionChanged="ListBoxFirstSelectionChanged">
+
+                    <ListBox.ItemTemplate>
+                        <DataTemplate DataType="{x:Type m:Player}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Text="{Binding Name}" />
+                                <TextBlock Grid.Column="1" Text="{Binding Simbol}" />
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="1">
+                <Label>Player two</Label>
+                <ListBox
+                    Height="100"
+                    HorizontalContentAlignment="Stretch"
+                    ItemsSource="{Binding ElementName=Window, Path=ListPlayers}"
+                    Selector.SelectionChanged="ListBoxSecondSelectionChanged">
+
+                    <ListBox.ItemTemplate>
+                        <DataTemplate DataType="{x:Type m:Player}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Text="{Binding Name}" />
+                                <TextBlock Grid.Column="1" Text="{Binding Simbol}" />
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+        </Grid>
+
+        <Button Content="Start Game" FontSize="20" Click="StartGameClick" />
+
+    </StackPanel>
+</UserControl>
