@@ -13,10 +13,7 @@ namespace TicTacToeWPF.Models
 
         public bool Equals(Player player)
         {
-            if (this.Name == player.Name && this.Simbol == player.Simbol)
-                return true;
-            else
-                return false;
+            return this.Name == player.Name && this.Simbol == player.Simbol;
         }
     }
 }

@@ -63,13 +63,14 @@
         {
             InitializeComponent();
 
-            ListPlayers = new ObservableCollection<Player>()
+            ObservableCollection<Player> players = new ObservableCollection<Player>()
             {
                 new Player() { Name = "Nicolas", Simbol = 'X' },
                 new Player() { Name = "Lina", Simbol = 'O' },
                 new Player() { Name = "Leonor", Simbol = 'W' },
                 new Player() { Name = "Rafael", Simbol = 'Z' }
             };
+            ListPlayers = players;
         }
 
         /// <summary>

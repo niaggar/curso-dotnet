@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:TicTacToeWPF.Views"
     xmlns:m="clr-namespace:TicTacToeWPF.Models"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    x:Name="Window"
+    Name="ControlWindow"
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
@@ -35,7 +35,7 @@
                 <ListBox
                     Height="100"
                     HorizontalContentAlignment="Stretch"
-                    ItemsSource="{Binding ElementName=Window, Path=ListPlayers}"
+                    ItemsSource="{Binding ElementName=ControlWindow, Path=ListPlayers}"
                     Selector.SelectionChanged="ListBoxFirstSelectionChanged">
 
                     <ListBox.ItemTemplate>
@@ -59,7 +59,7 @@
                 <ListBox
                     Height="100"
                     HorizontalContentAlignment="Stretch"
-                    ItemsSource="{Binding ElementName=Window, Path=ListPlayers}"
+                    ItemsSource="{Binding ElementName=ControlWindow, Path=ListPlayers}"
                     Selector.SelectionChanged="ListBoxSecondSelectionChanged">
 
                     <ListBox.ItemTemplate>
@@ -79,7 +79,10 @@
             </StackPanel>
         </Grid>
 
-        <Button Content="Start Game" FontSize="20" Click="StartGameClick" />
+        <Button
+            Click="StartGameClick"
+            Content="Start Game"
+            FontSize="20" />
 
     </StackPanel>
 </UserControl>
